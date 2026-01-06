@@ -1,7 +1,7 @@
-# 📌 Placement Tracker
+# 📌 TRACKAPPLY
 
-Placement Tracker is a full-stack web application that helps students track, manage, and analyze their placement applications efficiently.  
-It is designed to help students stay organized throughout the placement season.
+A full-stack web application that helps users track, manage, and analyze job applications efficiently.
+Designed especially for students and job seekers to stay organized during placement or job-hunting season.
 
 ---
 
