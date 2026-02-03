@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: jat-backend
+    env: node
+    branch: main
+    plan: free
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && npm start"
+    envVars:
+      - key: MONGODB_URI
+        value: "<SET_IN_RENDER_DASHBOARD>"
+      - key: JWT_SECRET
+        value: "<SET_IN_RENDER_DASHBOARD>"
+      - key: FRONTEND_URL
+        value: "<SET_IN_RENDER_DASHBOARD>"
+      - key: COOKIE_SAMESITE
+        value: "none"
+      - key: COOKIE_SECURE
+        value: "true"
+  - type: static
+    name: jat-frontend
+    env: static
+    branch: main
+    plan: free
+    buildCommand: "cd frontend && npm install && npm run build"
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: "<SET_TO_BACKEND_URL>"
+
+# Notes:
+# 1) Replace placeholder values in the Render dashboard with your real secrets. Do NOT commit secrets to the repo.
+# 2) This is a minimal template to help with initial setup. Adapt it as needed for your org's conventions.
